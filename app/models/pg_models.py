@@ -1,0 +1,1 @@
+from app.db.postgresDB import Base
