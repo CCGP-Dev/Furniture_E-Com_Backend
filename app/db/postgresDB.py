@@ -1,11 +1,11 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-from app.config import SQLALCHEMY_DATABASE_URL
+from app.config import settings
 
 # Create Engine
 engine = create_engine(
-    SQLALCHEMY_DATABASE_URL,
+    settings.SQLALCHEMY_DATABASE_URL,
     pool_size=50,
     max_overflow=10,
     pool_recycle=1800,
@@ -29,7 +29,7 @@ SessionLocal = sessionmaker(
 Base = declarative_base()
 
 
-# Dependency
+# Database Dependency
 def db_connection():
     db = SessionLocal()
     try:
