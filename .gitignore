@@ -9,8 +9,6 @@ venv/
 env/
 
 # Environment variables and secrets
-.env
-.env.*
 !.env.example
 
 # Testing and coverage
@@ -19,7 +17,6 @@ env/
 htmlcov/
 
 # IDE
-.vscode/
 .idea/
 
 # Operating system
@@ -28,3 +25,5 @@ Thumbs.db
 
 # Logs
 *.log
+config.bat
+node_modules
