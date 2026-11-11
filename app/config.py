@@ -24,6 +24,12 @@ class Settings(BaseSettings):
     API_KEY: str = os.getenv("CLOUDINARY_API_KEY", "")
     API_SECRET: str = os.getenv("CLOUDINARY_API_SECRET", "")
 
+    # JWT Authentication Settings (Hardcoded directly)
+    SECRET_KEY: str = os.getenv("SECRET_KEY", "your_fallback_secret_key_here")
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 60
+    REFRESH_TOKEN_EXPIRE_MINUTES: int = 10080  # 7 days (7 * 24 * 60)
+
     # Validate Cloudinary configuration
     def configure_cloudinary(self):
         if not all([self.CLOUD_NAME, self.API_KEY, self.API_SECRET]):
